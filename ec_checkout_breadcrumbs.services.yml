@@ -1,0 +1,7 @@
+services:
+  ec_checkout_breadcrumbs.breadcrumb_builder:
+    class: Drupal\ec_checkout_breadcrumbs\Breadcrumb\CheckoutBreadcrumbBuilder
+    arguments:
+      - '@commerce_checkout.checkout_order_manager'
+    tags:
+      - { name: breadcrumb_builder, priority: 2000 }

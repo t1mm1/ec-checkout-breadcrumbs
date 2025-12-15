@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * EC Checkout Breadcrumbs module.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function ec_checkout_breadcrumbs_help($route_name) {
+  switch ($route_name) {
+    case 'help.page.ec_checkout_breadcrumbs':
+      return '<p>' . t('Custom breadcrumbs for Drupal Commerce checkout steps.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_preprocess_breadcrumb().
+ */
+function ec_checkout_breadcrumbs_preprocess_breadcrumb(&$variables): void {
+  if (Drupal::routeMatch()->getRouteName() === 'commerce_checkout.form' && isset($variables['links'])) {
+    foreach ($variables['links'] as $key => $item) {
+      $variables['breadcrumb'][$key]['attributes'] = $item->getUrl()->getOptions()['attributes'] ?? [];
+    }
+
+    $variables['#attached']['library'][] = 'ec_checkout_breadcrumbs/style';
+  }
+}

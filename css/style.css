@@ -1,0 +1,9 @@
+.breadcrumb .breadcrumb-checkout-item-current {
+  font-weight: bold;
+  color: #000000;
+}
+
+.breadcrumb .breadcrumb-checkout-item-next,
+.breadcrumb .breadcrumb-checkout-item-complete {
+  opacity: 0.5;
+}

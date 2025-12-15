@@ -1,0 +1,11 @@
+name: 'EC Checkout Breadcrumbs'
+description: 'Provides breadcrumbs as steps for checkout process'
+package: 'Commerce'
+type: module
+core_version_requirement: ^10 || ^11
+dependencies:
+  - commerce:commerce_cart
+  - commerce:commerce_checkout
+
+version: '1.0.0'
+
