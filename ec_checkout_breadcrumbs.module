@@ -24,6 +24,6 @@ function ec_checkout_breadcrumbs_preprocess_breadcrumb(&$variables): void {
       $variables['breadcrumb'][$key]['attributes'] = $item->getUrl()->getOptions()['attributes'] ?? [];
     }
 
-    $variables['#attached']['library'][] = 'ec_checkout_breadcrumbs/style';
+    $variables['#attached']['library'][] = 'ec_checkout_breadcrumbs/styles';
   }
 }
